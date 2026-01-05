@@ -11,76 +11,77 @@ body {
 }
 
 /* Nút mở menu */
-#openBtn {
+#hackBtn {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    background: red;
+    top: 15px;
+    left: 15px;
+    background: #ff0033;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 14px;
+    border-radius: 6px;
     font-weight: bold;
 }
 
-/* Menu chính */
-#menu {
+/* Khung menu */
+#hackMenu {
     position: fixed;
     top: 60px;
-    left: 20px;
-    width: 220px;
-    background: #111;
+    left: 15px;
+    width: 230px;
+    background: #0f0f0f;
     color: white;
     border-radius: 10px;
     display: none;
     padding: 10px;
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 12px red;
 }
 
-#menu h3 {
+#hackMenu h3 {
+    margin: 0 0 10px;
     text-align: center;
-    margin: 5px 0 10px;
-    color: red;
+    color: #ff0033;
 }
 
-/* Nút chức năng */
-.func {
-    background: #222;
-    margin: 6px 0;
+/* Dòng chức năng */
+.item {
+    background: #1c1c1c;
     padding: 8px;
-    border-radius: 5px;
+    margin: 6px 0;
+    border-radius: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.func button {
-    background: gray;
+.item button {
+    background: #555;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 4px 10px;
     border-radius: 4px;
+    font-size: 12px;
 }
 </style>
 </head>
 <body>
 
-<button id="openBtn" onclick="toggleMenu()">☰ HACK</button>
+<button id="hackBtn" onclick="toggleMenu()">☰ HACK</button>
 
-<div id="menu">
+<div id="hackMenu">
     <h3>HACK MENU</h3>
 
-    <div class="func">God Mode <button onclick="toggle(this)">OFF</button></div>
-    <div class="func">Speed Hack <button onclick="toggle(this)">OFF</button></div>
-    <div class="func">No Cooldown <button onclick="toggle(this)">OFF</button></div>
-    <div class="func">Auto Win <button onclick="toggle(this)">OFF</button></div>
-    <div class="func">ESP <button onclick="toggle(this)">OFF</button></div>
+    <div class="item">God Mode <button onclick="toggle(this)">OFF</button></div>
+    <div class="item">Speed Hack <button onclick="toggle(this)">OFF</button></div>
+    <div class="item">No Cooldown <button onclick="toggle(this)">OFF</button></div>
+    <div class="item">Auto Win <button onclick="toggle(this)">OFF</button></div>
+    <div class="item">ESP <button onclick="toggle(this)">OFF</button></div>
 </div>
 
 <script>
 function toggleMenu() {
-    let m = document.getElementById("menu");
-    m.style.display = (m.style.display === "none") ? "block" : "none";
+    const menu = document.getElementById("hackMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
 function toggle(btn) {
@@ -90,7 +91,7 @@ function toggle(btn) {
         btn.style.color = "black";
     } else {
         btn.innerText = "OFF";
-        btn.style.background = "gray";
+        btn.style.background = "#555";
         btn.style.color = "white";
     }
 }
